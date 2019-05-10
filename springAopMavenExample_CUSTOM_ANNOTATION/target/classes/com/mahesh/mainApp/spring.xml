@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<aop:aspectj-autoproxy />
+	<!-- Object spring IOC Tayar karnar pan mi ethe manually kela ahe. context(spring 
+		schema madhe) use kara for Spring IOC Oject. -->
+
+	<bean id="c1" class="com.mahesh.model.Company">
+		<property name="name" value="TCS">
+		</property>
+	</bean>
+
+	<bean id="e1" class="com.mahesh.model.Employee">
+		<property name="name" value="Mahesh Potdar">
+		</property>
+	</bean>
+
+	<bean id="p1" class="com.mahesh.model.Person" autowire="byType">
+	</bean>
+	
+	<bean id="notUsed" class="com.mahesh.Aspect_Advice_service.LoggingService">
+	</bean>
+</beans>
